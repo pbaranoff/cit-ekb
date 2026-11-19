@@ -1,0 +1,65 @@
+<aside class="sidebar" id="sidebar" aria-label="Информация и поиск контейнера">
+  <nav class="utility-links utility-links--top" aria-label="О компании и сервисе">
+    <a class="utility-link" href="about.html"><img class="icon " src="assets/icons/building.svg" alt="" aria-hidden="true"><span>ИНФОРМАЦИЯ О КОМПАНИИ</span></a>
+    <a class="utility-link" href="rules.html"><img class="icon " src="assets/icons/list.svg" alt="" aria-hidden="true"><span>ПРАВИЛА ПОЛЬЗОВАНИЯ СЕРВИСОМ</span></a>
+  </nav>
+
+  <section class="container-search panel" aria-labelledby="search-title">
+    <div class="panel__heading"><h2 id="search-title">ВАШ КОНТЕЙНЕР</h2><img class="icon " src="assets/icons/cube.svg" alt="" aria-hidden="true"></div>
+    <form id="container-form" novalidate>
+      <label class="container-search__label" for="container-prefix">НОМЕР КОНТЕЙНЕРА</label>
+      <div class="container-search__fields">
+        <div class="container-code">
+          <div class="code-field code-field--prefix">
+            <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <input id="container-prefix" name="prefix" type="text" maxlength="4" pattern="[A-Za-z]{4}" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Буквенный код контейнера, 4 латинские буквы" aria-describedby="container-error">
+          </div>
+          <div class="code-field code-field--number">
+            <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <input id="container-number" name="number" type="text" inputmode="numeric" maxlength="7" pattern="[0-9]{7}" autocomplete="off" aria-label="Номер контейнера, 7 цифр" aria-describedby="container-error">
+          </div>
+        </div>
+        <button class="search-control" type="submit" aria-label="Найти контейнер"><img class="icon " src="assets/icons/search-submit.svg" alt="" aria-hidden="true"></button>
+        <button class="search-control" type="reset" data-container-clear aria-label="Очистить номер контейнера"><img class="icon " src="assets/icons/search-clear.svg" alt="" aria-hidden="true"></button>
+      </div>
+      <p class="field-message" id="container-error" role="status" aria-live="polite" hidden></p>
+    </form>
+  </section>
+
+  <!-- Figma fixture only. Hidden by default; ?state=tracking previews the supplied design. -->
+  <section class="tracking panel" id="container-tracking" aria-labelledby="tracking-title" hidden>
+    <h2 id="tracking-title">ДВИЖЕНИЕ КОНТЕЙНЕРА</h2>
+    <section class="tracking__group" aria-labelledby="tracking-group-0">
+      <h3 id="tracking-group-0">ПРИБЫТИЕ КОНТЕЙНЕРНОГО ПОЕЗДА</h3>
+      <dl class="tracking__rows">
+        <div class="tracking-row"><dt>В пути следования</dt><dd><span class="tracking-row__value">КП № 2029</span><span class="tracking-row__meta">осталось 6554 км</span></dd></div>
+        <div class="tracking-row"><dt>Отставлен в пути</dt><dd><span class="tracking-row__value">22.06.2026</span><span class="tracking-row__meta">ст. Ташкент</span></dd></div>
+        <div class="tracking-row"><dt>Прибыл на станцию</dt><dd><span class="tracking-row__value">23.06.2026</span></dd></div>
+        <div class="tracking-row"><dt>Подан на терминал</dt><dd><span class="tracking-row__value">24.06.2026</span></dd></div>
+      </dl>
+    </section>
+    <section class="tracking__group" aria-labelledby="tracking-group-1">
+      <h3 id="tracking-group-1">ОТПРАВЛЕНИЕ КОНТЕЙНЕРНОГО ПОЕЗДА</h3>
+      <dl class="tracking__rows">
+        <div class="tracking-row"><dt>Не оформлен</dt><dd><span class="tracking-row__value">—</span><span class="tracking-row__meta">дата не определена</span></dd></div>
+        <div class="tracking-row"><dt>Формируется КП</dt><dd><span class="tracking-row__value">ВЛ № 1137</span><span class="tracking-row__meta">23.06.2026</span></dd></div>
+        <div class="tracking-row"><dt>Отправлен</dt><dd><span class="tracking-row__value">ВЛ № 1136</span><span class="tracking-row__meta">23.06.2026</span></dd></div>
+        <div class="tracking-row"><dt>Отставлен в пути</dt><dd><span class="tracking-row__value">22.06.2026</span><span class="tracking-row__meta">ст. Войновка</span></dd></div>
+        <div class="tracking-row"><dt>Прибыл на станцию</dt><dd><span class="tracking-row__value">22.06.2026</span><span class="tracking-row__meta">Владивосток-эксп.</span></dd></div>
+      </dl>
+    </section>
+    <section class="tracking__group" aria-labelledby="tracking-group-2">
+      <h3 id="tracking-group-2">СТАТУС НАХОЖДЕНИЯ НА ТЕРМИНАЛЕ</h3>
+      <dl class="tracking__rows">
+        <div class="tracking-row"><dt>Без оплаты</dt><dd><span class="tracking-row__value">до 29.06.2026</span></dd></div>
+        <div class="tracking-row"><dt>Хранение на терминале</dt><dd><span class="tracking-row__value">с 20.06.2026</span></dd></div>
+        <div class="tracking-row"><dt>Хранение на СВХ</dt><dd><span class="tracking-row__value">с 21.06.2026</span></dd></div>
+      </dl>
+    </section>
+  </section>
+
+  <nav class="utility-links utility-links--bottom" aria-label="Полезные ссылки">
+    <a class="utility-link" href="information.html"><img class="icon " src="assets/icons/list.svg" alt="" aria-hidden="true"><span>ПОЛЕЗНАЯ ИНФОРМАЦИЯ</span><img class="icon utility-link__arrow" src="assets/icons/arrow-right.svg" alt="" aria-hidden="true"></a>
+    <a class="utility-link" href="fesco.html"><img class="fesco-mark" src="assets/images/fesco.png" width="24" height="14" alt=""><span>FESCO</span><img class="icon utility-link__arrow" src="assets/icons/arrow-right.svg" alt="" aria-hidden="true"></a>
+  </nav>
+</aside>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#932934">
+  <title>СиАйТи — контейнерный терминал, станция Кольцово</title>
+  <meta name="description" content="Контейнерный терминал СиАйТи на станции Кольцово. Движение контейнерных поездов, хранение и сервисы терминала.">
+  <link rel="preload" href="assets/fonts/PFBeauSansPro-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/PFBeauSansPro-Black.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body class="page-home" data-page="home">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <!-- Figma: Main / Main / Главная страница. Routes are integration placeholders; see README. -->
+  <!-- include:partials/header.html -->
+
+  <main class="page-layout" id="main" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__visual" aria-hidden="true">
+        <img class="hero__photo" src="assets/images/terminal.png" alt="" width="1771" height="888" fetchpriority="high">
+      </div>
+      <div class="hero__copy">
+        <p class="hero__eyebrow">МЕСТО ПРИБЫТИЯ ГРУЗА<span class="hero__dash hero__dash--desktop"> - </span><span class="hero__dash hero__dash--mobile"> — </span>КОНТЕЙНЕРНЫЙ ТЕРМИНАЛ · КОЛЬЦОВО</p>
+        <h1 id="hero-title">Станция<br>Кольцово</h1>
+        <p class="hero__description">Движение контейнерных поездов, хранение и сервисы терминала — в одном окне.</p>
+      </div>
+    </section>
+
+    <!-- include:partials/sidebar.html -->
+
+    <!-- include:partials/sidebar-toggle.html -->
+
+    <section class="services" id="services" aria-label="Онлайн-сервисы терминала">
+      <a class="service-card" href="arrivals.html">
+        <div class="service-card__top"><span class="service-card__eyebrow">ON-LINE ИНФОРМИРОВАНИЕ</span><img class="icon " src="assets/icons/arrow-right.svg" alt="" aria-hidden="true"></div>
+        <h2>ПРИБЫТИЕ ТРАНСПОРТНЫХ СРЕДСТВ НА КОНТЕЙНЕРНЫЙ ТЕРМИНАЛ</h2>
+      </a>
+      <a class="service-card" href="time-slot.html">
+        <div class="service-card__top"><span class="service-card__eyebrow">TIME-СЛОТ</span><img class="icon " src="assets/icons/arrow-right.svg" alt="" aria-hidden="true"></div>
+        <h2>ВЫБОР СЕРВИСА ГАРАНТИРОВАННОГО ОБСЛУЖИВАНИЯ НА КОНТЕЙНЕРНОМ ТЕРМИНАЛЕ</h2>
+      </a>
+      <a class="service-card" href="urgent-service.html">
+        <div class="service-card__top"><span class="service-card__eyebrow">ЗАЯВКА В ДАТУ ПОДАЧИ</span><img class="icon " src="assets/icons/arrow-right.svg" alt="" aria-hidden="true"></div>
+        <h2>СРОЧНОЕ ОБСЛУЖИВАНИЕ НА КОНТЕЙНЕРНОМ ТЕРМИНАЛЕ</h2>
+      </a>
+    </section>
+
+    <!-- include:partials/mobile-contacts.html -->
+  </main>
+
+  <!-- include:partials/mobile-menu.html -->
+</body>
+</html>
