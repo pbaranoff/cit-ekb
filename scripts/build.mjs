@@ -87,7 +87,7 @@ export async function buildPages(pageNames = []) {
     const sourceFile = path.join(sourcePages, `${name}.html`);
     let html = await expandIncludes(sourceFile);
     html = markCurrentSidebar(html, name);
-    html = html.replace(/<nav class="(?:main-nav|mobile-menu__nav)"[^>]*>[\s\S]*?<\/nav>/g, nav =>
+    html = html.replace(/<nav class="(?:main-nav|mobile-menu__nav|service-links)"[^>]*>[\s\S]*?<\/nav>/g, nav =>
       nav.replaceAll(`<a href="${name}.html">`, `<a href="${name}.html" aria-current="page">`)
     );
     const notice = `<!-- Generated from src/pages/${name}.html. Edit source/partials, then run node scripts/build.mjs. -->`;
