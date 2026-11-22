@@ -54,6 +54,7 @@
   --u: clamp(.708333px,.052083333vw,1px);
   --header-height: calc(128 * var(--u));
   --sidebar-width: calc(440 * var(--u));
+  --sidebar-toggle-height: 44px;
 }
 
 *,*::before,*::after {
@@ -377,7 +378,7 @@ img {
 .page-layout {
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0,1fr);
-  grid-template-rows: minmax(calc(952 * var(--u)),calc(100svh - var(--header-height)));
+  grid-template-rows: minmax(max(calc(952 * var(--u)), calc(100svh - var(--header-height))), auto);
   position: relative
 }
 
@@ -456,8 +457,15 @@ img {
   display: flex;
   flex-direction: column;
   gap: calc(16 * var(--u));
-  padding: calc(24 * var(--u)) calc(28 * var(--u)) calc(46 * var(--u));
+  padding: calc(24 * var(--u)) calc(28 * var(--u)) calc(var(--sidebar-toggle-height) + 8 * var(--u));
   min-width: 0
+}
+
+@media (min-width: 1360px) {
+  .is-sticky-sidebar {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .panel {
@@ -706,19 +714,19 @@ img {
 }
 
 .sidebar-toggle {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: end;
-  justify-self: start;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 6px 0;
-  margin: 0 0 calc(8 * var(--u)) calc(28 * var(--u));
-  background: transparent;
-  color: #888;
-  font-size: calc(12 * var(--u));
-  z-index: 1
+  width: var(--sidebar-width);
+  height: var(--sidebar-toggle-height);
+  padding: 0 calc(28 * var(--u));
+  background: var(--color-page);
+  color: #646464;
+  font-size: calc(12 * var(--u))
 }
 
 .sidebar-toggle .icon {
@@ -800,9 +808,9 @@ img {
 
 .is-sidebar-collapsed .sidebar-toggle {
   writing-mode: vertical-rl;
-  margin-left: calc(20 * var(--u));
-  align-self: start;
-  margin-top: 24px
+  width: calc(72 * var(--u));
+  height: auto;
+  padding: 12px 0
 }
 
 .is-sidebar-collapsed .sidebar-toggle .icon {

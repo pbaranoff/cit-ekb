@@ -90,6 +90,21 @@
       updateMenuState(false);
     }
 
+    // The details element contains the whole menu on interior pages.
+    const sidebarMenu = document.querySelector('.page-tools') || document.querySelector('#sidebar');
+    if (sidebarMenu) {
+      function updateSidebarPosition() {
+        const height = sidebarMenu.getBoundingClientRect().height;
+        // The menu's bottom padding reserves the space occupied by the fixed button.
+        const fits = !mobileViewport.matches && height > 0 && height <= document.documentElement.clientHeight;
+        sidebarMenu.classList.toggle('is-sticky-sidebar', fits);
+      }
+
+      new ResizeObserver(updateSidebarPosition).observe(sidebarMenu, { box: 'border-box' });
+      window.addEventListener('resize', updateSidebarPosition);
+      updateSidebarPosition();
+    }
+
     function setSidebarExpanded(expanded) {
       body.classList.toggle('is-sidebar-collapsed', !expanded);
       if (!sidebarToggle) return;

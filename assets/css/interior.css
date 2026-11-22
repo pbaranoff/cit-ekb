@@ -19,11 +19,8 @@
 }
 
 .page-tools > summary { display: none; }
-.inner-tools .sidebar { padding-bottom: 0; }
-.inner-tools .sidebar-toggle { margin: calc(16 * var(--u)) calc(28 * var(--u)) calc(24 * var(--u)); }
 .page-interior.is-sidebar-collapsed .inner-layout { grid-template-columns: calc(72 * var(--u)) minmax(0, 1fr); }
 .page-interior.is-sidebar-collapsed .page-tools { display: none; }
-.page-interior.is-sidebar-collapsed .sidebar-toggle { margin-left: calc(20 * var(--u)); }
 
 .inner-content {
   display: flex;
