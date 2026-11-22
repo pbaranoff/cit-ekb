@@ -1,0 +1,93 @@
+/* Press archive, within the shared interior page layout. */
+.press { --unit: var(--u); }
+.press .page-heading__lead { color: inherit; }
+
+.press-period { position: relative; width: min(100%, calc(240 * var(--unit))); }
+.press-period summary,
+.press-pages > a,
+.press-pages [aria-current] {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: white;
+}
+.press-period summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(52 * var(--unit));
+  padding: 0 calc(18 * var(--unit));
+  cursor: pointer;
+  list-style: none;
+}
+.press-period summary::-webkit-details-marker { display: none; }
+.press-period summary::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: url("../icons/chevron-down.svg") center / contain no-repeat;
+}
+.press-period[open] summary::after { transform: rotate(180deg); }
+.press-period nav {
+  position: absolute;
+  top: calc(100% + 4px);
+  z-index: 3;
+  width: 100%;
+  max-height: min(60vh, 520px);
+  overflow: auto;
+  padding: 8px;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 18%);
+}
+.press-period a { display: flex; justify-content: space-between; align-items: center; min-height: 44px; padding: 0 14px; }
+.press-period a:hover, .press-period [aria-current] { background: var(--color-subtle); }
+.press-period [aria-current]::after { content: "✓"; color: var(--color-accent); }
+
+.press-feature {
+  display: grid;
+  grid-template-columns: calc(620 * var(--unit)) 1fr;
+  align-items: center;
+  gap: calc(32 * var(--unit));
+  padding: calc(32 * var(--unit)) calc(10 * var(--unit));
+}
+.press-feature img, .press-story img { width: 100%; height: auto; object-fit: cover; }
+.press-feature img { aspect-ratio: 620 / 420; border-radius: 15px; }
+.press-feature > div { display: grid; gap: calc(18 * var(--unit)); }
+.press-feature h3 { font-size: calc(40 * var(--unit)); line-height: 1.2; font-weight: 900; }
+.press-read { color: var(--color-accent); font-weight: 600; justify-self: start; }
+.press-read span { margin-left: 6px; }
+
+.press-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: calc(26 * var(--unit)) calc(16 * var(--unit)); padding: calc(5 * var(--unit)); }
+.press-story { overflow: hidden; position: relative; }
+.press-story img { aspect-ratio: 464 / 260; }
+.press-story > div { display: grid; gap: calc(12 * var(--unit)); padding: calc(24 * var(--unit)); }
+.press-story h3 { font-size: calc(20 * var(--unit)); line-height: 1.2; }
+.press-story p { font-size: calc(14 * var(--unit)); line-height: 1.22; font-weight: 400; }
+.press-story a::after { content: ""; position: absolute; inset: 0; }
+.press-story:focus-within { outline: 2px solid var(--color-accent); }
+.press-story:hover h3, .press-read:hover { color: var(--color-accent); text-decoration: underline; }
+
+.press-pages { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: calc(8 * var(--unit)); padding-top: calc(8 * var(--unit)); }
+.press-pages > * { display: inline-flex; align-items: center; justify-content: center; min-width: calc(44 * var(--unit)); min-height: calc(44 * var(--unit)); }
+.press-pages [aria-current] { color: white; background: var(--color-accent); }
+.press-pages a:hover { border-color: var(--color-accent); }
+.press-pages [rel="next"] { gap: 12px; padding: 0 20px; color: var(--color-accent); }
+
+@media (max-width: 1359px) {
+  .press { --unit: 1px; }
+  .press-feature { grid-template-columns: 44% 1fr; gap: 24px; padding: 20px; }
+  .press-feature h3 { font-size: 30px; }
+  .press-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; padding: 2px; }
+}
+@media (max-width: 767px) {
+  .press-period { width: 100%; }
+  .press-feature, .press-grid { grid-template-columns: 1fr; }
+  .press-feature { gap: 0; padding: 0; overflow: hidden; }
+  .press-feature img { border-radius: 0; }
+  .press-feature > div, .press-story > div { padding: 18px; gap: 12px; }
+  .press-feature h3 { font-size: 26px; }
+  .press-grid { gap: 16px; }
+  .press-pages { gap: 4px; }
+  .press-pages > [aria-hidden] { min-width: 12px; }
+  .press-pages [rel="next"] { width: 100%; }
+}

@@ -1,0 +1,281 @@
+<!doctype html>
+<!-- Generated from src/pages/press.html. Edit source/partials, then run node scripts/build.mjs. -->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#932934">
+  <title>Пресс-центр — СиАйТи Терминал</title>
+  <meta name="description" content="Новости Группы компаний C.I.T., еженедельные обзоры рынка транспорта и логистики, публикации в отраслевых и деловых СМИ. Архив материалов — с 2017 года.">
+  <link rel="preload" href="assets/fonts/PFBeauSansPro-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/PFBeauSansPro-Black.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/interior.css">
+  <link rel="stylesheet" href="assets/css/press.css">
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/interior.js" defer></script>
+</head>
+<body class="page-interior page-press" data-page="press">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="site-switcher">
+      <p class="site-switcher__label">ВЫБЕРИТЕ НУЖНЫЙ САЙТ</p>
+      <div class="site-switcher__logos">
+        <a class="site-switcher__cit" href="index.html" aria-label="СиАйТи — главная"><img class="" src="assets/images/cit-logo.png" alt="СиАйТи — Container Intermodal Technology" width="182" height="51"></a>
+        <a class="site-switcher__ekt" href="ekt.html"><img class="" src="assets/images/ekt-logo.png" alt="Екатеринбургский таможенный терминал" width="176" height="51"></a>
+      </div>
+    </div>
+    <div class="site-header__desktop">
+      <nav class="main-nav" aria-label="Основная навигация" data-dropdown-scope>
+        <a href="account.html">ЛИЧНЫЙ КАБИНЕТ</a>
+        <a href="prices.html">СТОИМОСТЬ УСЛУГ</a>
+        <a href="index.html#services">ОНЛАЙН-СЕРВИС</a>
+        <details class="nav-dropdown nav-dropdown--services" data-dropdown><summary>УСЛУГИ<img class="icon " src="assets/icons/chevron-down.svg" alt="" aria-hidden="true"></summary><div class="nav-dropdown__panel"><a href="arrivals.html">ПРИБЫТИЕ ТРАНСПОРТНЫХ СРЕДСТВ НА КОНТЕЙНЕРНЫЙ ТЕРМИНАЛ</a><a href="time-slot.html">ВЫБОР СЕРВИСА ГАРАНТИРОВАННОГО ОБСЛУЖИВАНИЯ НА КОНТЕЙНЕРНОМ ТЕРМИНАЛЕ</a><a href="urgent-service.html">СРОЧНОЕ ОБСЛУЖИВАНИЕ НА КОНТЕЙНЕРНОМ ТЕРМИНАЛЕ</a></div></details>
+        <a href="directions.html">СХЕМА ПРОЕЗДА</a>
+        <details class="nav-dropdown nav-dropdown--contacts" data-dropdown><summary>КОНТАКТЫ<img class="icon " src="assets/icons/chevron-down.svg" alt="" aria-hidden="true"></summary><div class="nav-dropdown__panel"><a href="mailto:info@cit-ekb.ru">info@cit-ekb.ru</a><a href="tel:+73430000000">+7 343 000-00-00</a></div></details>
+      </nav>
+      <div class="contacts contacts--header"><a class="contacts__phone" href="tel:+73430000000"><img class="icon " src="assets/icons/truck.svg" alt="" aria-hidden="true"><span>+7 343 000-00-00</span></a><a class="contacts__email" href="mailto:info@cit-ekb.ru">info@cit-ekb.ru</a></div>
+      <a class="button request-button" href="request.html"><span>Подать заявку</span><img class="icon " src="assets/icons/arrow-right-white.svg" alt="" aria-hidden="true"></a>
+    </div>
+    <button class="menu-toggle" type="button" data-menu-open aria-label="Открыть меню" aria-haspopup="dialog" aria-controls="mobile-menu" aria-expanded="false"><img class="icon " src="assets/icons/menu.svg" alt="" aria-hidden="true"></button>
+  </header>
+
+  <main class="inner-layout" id="main" tabindex="-1">
+    <div class="inner-tools">
+      <details class="page-tools" open>
+        <summary>
+          <img class="icon" src="assets/icons/cube.svg" alt="" aria-hidden="true">
+          <span>Контейнер и полезные ссылки</span>
+          <img class="icon" src="assets/icons/chevron-down.svg" alt="" aria-hidden="true">
+        </summary>
+        <div class="page-tools__content">
+          <aside class="sidebar" id="sidebar" aria-label="Информация и поиск контейнера">
+            <nav class="utility-links utility-links--top" aria-label="О компании и сервисе">
+              <a class="utility-link" href="about.html"><img class="icon " src="assets/icons/building.svg" alt="" aria-hidden="true"><span>ИНФОРМАЦИЯ О КОМПАНИИ</span></a>
+              <a class="utility-link" href="rules.html"><img class="icon " src="assets/icons/list.svg" alt="" aria-hidden="true"><span>ПРАВИЛА ПОЛЬЗОВАНИЯ СЕРВИСОМ</span></a>
+            </nav>
+
+            <section class="container-search panel" aria-labelledby="search-title">
+              <div class="panel__heading"><h2 id="search-title">ВАШ КОНТЕЙНЕР</h2><img class="icon " src="assets/icons/cube.svg" alt="" aria-hidden="true"></div>
+              <form id="container-form" novalidate>
+                <label class="container-search__label" for="container-prefix">НОМЕР КОНТЕЙНЕРА</label>
+                <div class="container-search__fields">
+                  <div class="container-code">
+                    <div class="code-field code-field--prefix">
+                      <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                      <input id="container-prefix" name="prefix" type="text" maxlength="4" pattern="[A-Za-z]{4}" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Буквенный код контейнера, 4 латинские буквы" aria-describedby="container-error">
+                    </div>
+                    <div class="code-field code-field--number">
+                      <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                      <input id="container-number" name="number" type="text" inputmode="numeric" maxlength="7" pattern="[0-9]{7}" autocomplete="off" aria-label="Номер контейнера, 7 цифр" aria-describedby="container-error">
+                    </div>
+                  </div>
+                  <button class="search-control" type="submit" aria-label="Найти контейнер"><img class="icon " src="assets/icons/search-submit.svg" alt="" aria-hidden="true"></button>
+                  <button class="search-control" type="reset" data-container-clear aria-label="Очистить номер контейнера"><img class="icon " src="assets/icons/search-clear.svg" alt="" aria-hidden="true"></button>
+                </div>
+                <p class="field-message" id="container-error" role="status" aria-live="polite" hidden></p>
+              </form>
+            </section>
+
+            <!-- Figma fixture only. Hidden by default; ?state=tracking previews the supplied design. -->
+            <section class="tracking panel" id="container-tracking" aria-labelledby="tracking-title" hidden>
+              <h2 id="tracking-title">ДВИЖЕНИЕ КОНТЕЙНЕРА</h2>
+              <section class="tracking__group" aria-labelledby="tracking-group-0">
+                <h3 id="tracking-group-0">ПРИБЫТИЕ КОНТЕЙНЕРНОГО ПОЕЗДА</h3>
+                <dl class="tracking__rows">
+                  <div class="tracking-row"><dt>В пути следования</dt><dd><span class="tracking-row__value">КП № 2029</span><span class="tracking-row__meta">осталось 6554 км</span></dd></div>
+                  <div class="tracking-row"><dt>Отставлен в пути</dt><dd><span class="tracking-row__value">22.06.2026</span><span class="tracking-row__meta">ст. Ташкент</span></dd></div>
+                  <div class="tracking-row"><dt>Прибыл на станцию</dt><dd><span class="tracking-row__value">23.06.2026</span></dd></div>
+                  <div class="tracking-row"><dt>Подан на терминал</dt><dd><span class="tracking-row__value">24.06.2026</span></dd></div>
+                </dl>
+              </section>
+              <section class="tracking__group" aria-labelledby="tracking-group-1">
+                <h3 id="tracking-group-1">ОТПРАВЛЕНИЕ КОНТЕЙНЕРНОГО ПОЕЗДА</h3>
+                <dl class="tracking__rows">
+                  <div class="tracking-row"><dt>Не оформлен</dt><dd><span class="tracking-row__value">—</span><span class="tracking-row__meta">дата не определена</span></dd></div>
+                  <div class="tracking-row"><dt>Формируется КП</dt><dd><span class="tracking-row__value">ВЛ № 1137</span><span class="tracking-row__meta">23.06.2026</span></dd></div>
+                  <div class="tracking-row"><dt>Отправлен</dt><dd><span class="tracking-row__value">ВЛ № 1136</span><span class="tracking-row__meta">23.06.2026</span></dd></div>
+                  <div class="tracking-row"><dt>Отставлен в пути</dt><dd><span class="tracking-row__value">22.06.2026</span><span class="tracking-row__meta">ст. Войновка</span></dd></div>
+                  <div class="tracking-row"><dt>Прибыл на станцию</dt><dd><span class="tracking-row__value">22.06.2026</span><span class="tracking-row__meta">Владивосток-эксп.</span></dd></div>
+                </dl>
+              </section>
+              <section class="tracking__group" aria-labelledby="tracking-group-2">
+                <h3 id="tracking-group-2">СТАТУС НАХОЖДЕНИЯ НА ТЕРМИНАЛЕ</h3>
+                <dl class="tracking__rows">
+                  <div class="tracking-row"><dt>Без оплаты</dt><dd><span class="tracking-row__value">до 29.06.2026</span></dd></div>
+                  <div class="tracking-row"><dt>Хранение на терминале</dt><dd><span class="tracking-row__value">с 20.06.2026</span></dd></div>
+                  <div class="tracking-row"><dt>Хранение на СВХ</dt><dd><span class="tracking-row__value">с 21.06.2026</span></dd></div>
+                </dl>
+              </section>
+            </section>
+
+            <nav class="utility-links utility-links--bottom" aria-label="Полезные ссылки">
+              <a class="utility-link" href="information.html"><img class="icon " src="assets/icons/list.svg" alt="" aria-hidden="true"><span>ПОЛЕЗНАЯ ИНФОРМАЦИЯ</span><img class="icon utility-link__arrow" src="assets/icons/arrow-right.svg" alt="" aria-hidden="true"></a>
+              <a class="utility-link" href="fesco.html"><img class="fesco-mark" src="assets/images/fesco.png" width="24" height="14" alt=""><span>FESCO</span><img class="icon utility-link__arrow" src="assets/icons/arrow-right.svg" alt="" aria-hidden="true"></a>
+            </nav>
+          </aside>
+        </div>
+      </details>
+      <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="true">
+        <img class="icon " src="assets/icons/arrow-right-small.svg" alt="" aria-hidden="true"><span data-sidebar-label>Скрыть</span>
+      </button>
+    </div>
+
+    <article class="inner-content press" aria-labelledby="press-title">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <ol>
+          <li><a href="index.html">ГЛАВНАЯ</a></li>
+          <li><a href="about.html">ИНФОРМАЦИЯ О КОМПАНИИ</a></li>
+          <li><span aria-current="page">ПРЕСС-ЦЕНТР</span></li>
+        </ol>
+      </nav>
+
+      <header class="page-heading">
+        <h1 id="press-title">Пресс-центр</h1>
+        <p class="page-heading__lead">Новости Группы компаний C.I.T., еженедельные обзоры рынка транспорта и логистики, публикации в отраслевых и деловых СМИ. Архив материалов — с 2017 года.</p>
+      </header>
+      <details class="press-period" data-dropdown>
+        <summary aria-label="Выбрать период. За всё время">За всё время</summary>
+        <nav aria-label="Период публикаций">
+          <a href="press.html" aria-current="page">За всё время</a>
+          <a href="https://cit-ekb.ru/feed/cit/2026/">2026</a>
+          <a href="https://cit-ekb.ru/feed/cit/2025/">2025</a>
+          <a href="https://cit-ekb.ru/feed/cit/2024/">2024</a>
+          <a href="https://cit-ekb.ru/feed/cit/2023/">2023</a>
+          <a href="https://cit-ekb.ru/feed/cit/2022/">2022</a>
+          <a href="https://cit-ekb.ru/feed/cit/2021/">2021</a>
+          <a href="https://cit-ekb.ru/feed/cit/2020/">2020</a>
+          <a href="https://cit-ekb.ru/feed/cit/2019/">2019</a>
+          <a href="https://cit-ekb.ru/feed/cit/2018/">2018</a>
+          <a href="https://cit-ekb.ru/feed/cit/2017/">2017</a>
+        </nav>
+      </details>
+      <section class="content-section">
+        <h2>ГЛАВНЫЙ МАТЕРИАЛ</h2>
+        <article class="content-card press-feature">
+          <img src="assets/images/press/customs-day.jpg" width="620" height="420" alt="">
+          <div>
+            <time class="content-eyebrow" datetime="2026-07-05">05 ИЮЛЯ 2026</time>
+            <h3>5 июля — День Екатеринбургской таможни</h3>
+            <p>Поздравляем всех сотрудников Екатеринбургской таможни с профессиональным праздником! Ваш высокий уровень профессионализма, надёжность, принципиальность — основа для решения стратегических задач в области внешнеэкономической деятельности страны и региона.</p>
+            <a class="press-read" href="https://cit-ekb.ru/feed/cit/2026/07/05/5-iyulya-den-ekaterinburgskoj-tamozhni2026/">Читать полностью <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </section>
+      <section class="content-section">
+        <h2>НОВОСТИ И ПУБЛИКАЦИИ</h2>
+        <div class="press-grid">
+          <article class="content-card press-story">
+            <img src="assets/images/press/review-25.jpg" width="464" height="260" alt="" loading="lazy">
+            <div>
+              <time class="content-eyebrow" datetime="2026-07-03">03 ИЮЛЯ 2026</time>
+              <h3><a href="https://cit-ekb.ru/feed/cit/2026/07/03/obzor-smi-novosti-transporta-i-logistiki-vypusk-25-275-29062026-03072026/">Обзор СМИ: новости транспорта и логистики. Выпуск № 25 (275)</a></h3>
+              <p>Мировые новости, аналитика, новости логистики, новости компаний</p>
+            </div>
+          </article>
+          <article class="content-card press-story">
+            <img src="assets/images/press/digital-logistics.jpg" width="464" height="260" alt="" loading="lazy">
+            <div>
+              <time class="content-eyebrow" datetime="2026-06-30">30 ИЮНЯ 2026</time>
+              <h3><a href="https://cit-ekb.ru/feed/cit/2026/06/30/cit-predstavil-opyt-cifrovizacii-v-logistike/">C.I.T. представил опыт цифровизации в логистике</a></h3>
+              <p>Подробности — в материале «Эксперт-Урал»</p>
+            </div>
+          </article>
+          <article class="content-card press-story">
+            <img src="assets/images/press/memorial.jpg" width="464" height="260" alt="" loading="lazy">
+            <div>
+              <time class="content-eyebrow" datetime="2026-06-22">22 ИЮНЯ 2026</time>
+              <h3><a href="https://cit-ekb.ru/feed/cit/2026/06/22/v-ekaterinburgskom-suvorovskom-uchilishe-uvekovechili-pamyat-geroev/">В Екатеринбургском суворовском училище увековечили память героев</a></h3>
+              <p>Проект реализован при поддержке собственника АО «СиАйТи Терминал» Владислава Усанова</p>
+            </div>
+          </article>
+          <article class="content-card press-story">
+            <img src="assets/images/press/review-24.jpg" width="464" height="260" alt="" loading="lazy">
+            <div>
+              <time class="content-eyebrow" datetime="2026-06-26">26 ИЮНЯ 2026</time>
+              <h3><a href="https://cit-ekb.ru/feed/cit/2026/06/26/obzor-smi-novosti-transporta-i-logistiki-vypusk-24-274-22062026-26062026/">Обзор СМИ: новости транспорта и логистики. Выпуск № 24 (274)</a></h3>
+              <p>Мировые новости, аналитика, новости логистики, новости компаний</p>
+            </div>
+          </article>
+          <article class="content-card press-story">
+            <img src="assets/images/press/review-23.jpg" width="464" height="260" alt="" loading="lazy">
+            <div>
+              <time class="content-eyebrow" datetime="2026-06-19">19 ИЮНЯ 2026</time>
+              <h3><a href="https://cit-ekb.ru/feed/cit/2026/06/19/obzor-smi-novosti-transporta-i-logistiki-vypusk-23-273-15062026-19062026/">Обзор СМИ: новости транспорта и логистики. Выпуск № 23 (273)</a></h3>
+              <p>Мировые новости, аналитика, новости логистики, новости компаний</p>
+            </div>
+          </article>
+          <article class="content-card press-story">
+            <img src="assets/images/press/anniversary.jpg" width="464" height="260" alt="" loading="lazy">
+            <div>
+              <time class="content-eyebrow" datetime="2026-06-15">15 ИЮНЯ 2026</time>
+              <h3><a href="https://cit-ekb.ru/feed/cit/2026/06/15/den-rozhdeniya-gruppy-kompanij/">День рождения Группы компаний</a></h3>
+              <p>Благодарим всех, кто был и остаётся частью нашего общего пути</p>
+            </div>
+          </article>
+          <article class="content-card press-story">
+            <img src="assets/images/press/review-22.jpg" width="464" height="260" alt="" loading="lazy">
+            <div>
+              <time class="content-eyebrow" datetime="2026-06-11">11 ИЮНЯ 2026</time>
+              <h3><a href="https://cit-ekb.ru/feed/cit/2026/06/11/obzor-smi-novosti-transporta-i-logistiki-vypusk-22-272-08062026-11062026/">Обзор СМИ: новости транспорта и логистики. Выпуск № 22 (272)</a></h3>
+              <p>Мировые новости, аналитика, новости логистики, новости компаний</p>
+            </div>
+          </article>
+          <article class="content-card press-story">
+            <img src="assets/images/press/review-21.jpg" width="464" height="260" alt="" loading="lazy">
+            <div>
+              <time class="content-eyebrow" datetime="2026-06-05">05 ИЮНЯ 2026</time>
+              <h3><a href="https://cit-ekb.ru/feed/cit/2026/06/05/obzor-smi-novosti-transporta-i-logistiki-vypusk-21-271-01062026-05062026/">Обзор СМИ: новости транспорта и логистики. Выпуск № 21 (271)</a></h3>
+              <p>Мировые новости, аналитика, новости логистики, новости компаний</p>
+            </div>
+          </article>
+          <article class="content-card press-story">
+            <img src="assets/images/press/customs-post.jpg" width="464" height="260" alt="" loading="lazy">
+            <div>
+              <time class="content-eyebrow" datetime="2026-05-30">30 МАЯ 2026</time>
+              <h3><a href="https://cit-ekb.ru/feed/cit/2026/05/30/30-maya-den-obrazovaniya-oktyabrskogo-tamozhennogo/">30 мая — День образования Октябрьского таможенного поста</a></h3>
+              <p>Поздравляем всех сотрудников и ветеранов</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <nav class="press-pages" aria-label="Страницы публикаций">
+        <span aria-current="page" aria-label="Страница 1">1</span>
+        <a href="https://cit-ekb.ru/feed/cit/page2/" aria-label="Страница 2">2</a>
+        <a href="https://cit-ekb.ru/feed/cit/page3/" aria-label="Страница 3">3</a>
+        <a href="https://cit-ekb.ru/feed/cit/page4/" aria-label="Страница 4">4</a>
+        <a href="https://cit-ekb.ru/feed/cit/page5/" aria-label="Страница 5">5</a>
+        <a href="https://cit-ekb.ru/feed/cit/page6/" aria-label="Страница 6">6</a>
+        <span aria-hidden="true">…</span>
+        <a href="https://cit-ekb.ru/feed/cit/page69/" aria-label="Страница 69">69</a>
+        <a href="https://cit-ekb.ru/feed/cit/page2/" rel="next">Следующая страница <span aria-hidden="true">→</span></a>
+      </nav>
+    </article>
+  </main>
+  <dialog class="mobile-menu" id="mobile-menu" aria-label="Меню сайта">
+    <div class="mobile-menu__top">
+      <a href="index.html" aria-label="СиАйТи — главная"><img class="mobile-menu__logo" src="assets/images/cit-logo.png" alt="СиАйТи — Container Intermodal Technology" width="182" height="51"></a>
+      <button class="menu-toggle" type="button" data-menu-close aria-label="Закрыть меню"><img class="icon " src="assets/icons/close.svg" alt="" aria-hidden="true"></button>
+    </div>
+    <nav class="mobile-menu__nav" aria-label="Мобильная навигация" data-dropdown-scope>
+      <a href="account.html">ЛИЧНЫЙ КАБИНЕТ</a>
+        <a href="prices.html">СТОИМОСТЬ УСЛУГ</a>
+        <a href="index.html#services">ОНЛАЙН-СЕРВИС</a>
+        <details class="nav-dropdown nav-dropdown--services" data-dropdown><summary>УСЛУГИ<img class="icon " src="assets/icons/chevron-down.svg" alt="" aria-hidden="true"></summary><div class="nav-dropdown__panel"><a href="arrivals.html">ПРИБЫТИЕ ТРАНСПОРТНЫХ СРЕДСТВ НА КОНТЕЙНЕРНЫЙ ТЕРМИНАЛ</a><a href="time-slot.html">ВЫБОР СЕРВИСА ГАРАНТИРОВАННОГО ОБСЛУЖИВАНИЯ НА КОНТЕЙНЕРНОМ ТЕРМИНАЛЕ</a><a href="urgent-service.html">СРОЧНОЕ ОБСЛУЖИВАНИЕ НА КОНТЕЙНЕРНОМ ТЕРМИНАЛЕ</a></div></details>
+        <a href="directions.html">СХЕМА ПРОЕЗДА</a>
+        <details class="nav-dropdown nav-dropdown--contacts" data-dropdown><summary>КОНТАКТЫ<img class="icon " src="assets/icons/chevron-down.svg" alt="" aria-hidden="true"></summary><div class="nav-dropdown__panel"><a href="mailto:info@cit-ekb.ru">info@cit-ekb.ru</a><a href="tel:+73430000000">+7 343 000-00-00</a></div></details>
+    </nav>
+    <div class="mobile-menu__bottom">
+      <div class="mobile-menu__switcher">
+        <p>ВЫБЕРИТЕ НУЖНЫЙ САЙТ</p>
+        <div class="mobile-menu__sites">
+          <a href="index.html"><img class="" src="assets/images/cit-logo.png" alt="СиАйТи — Container Intermodal Technology" width="182" height="51"></a>
+          <a href="ekt.html"><img class="" src="assets/images/ekt-logo.png" alt="Екатеринбургский таможенный терминал" width="176" height="51"></a>
+        </div>
+      </div>
+      <div class="contacts contacts--menu"><a class="contacts__phone" href="tel:+73430000000"><img class="icon " src="assets/icons/truck.svg" alt="" aria-hidden="true"><span>+7 343 000-00-00</span></a><a class="contacts__email" href="mailto:info@cit-ekb.ru">info@cit-ekb.ru</a></div>
+      <a class="button request-button" href="request.html"><span>Подать заявку</span><img class="icon " src="assets/icons/arrow-right-white.svg" alt="" aria-hidden="true"></a>
+    </div>
+  </dialog>
+</body>
+</html>
