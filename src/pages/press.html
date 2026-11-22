@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/css/press.css">
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/interior.js" defer></script>
+  <script src="assets/js/press-tags.js" defer></script>
 </head>
 <body class="page-interior page-press" data-page="press">
   <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -75,7 +76,8 @@
         </article>
       </section>
       <section class="content-section">
-        <h2>НОВОСТИ И ПУБЛИКАЦИИ</h2>
+        <h2 id="publications">НОВОСТИ И ПУБЛИКАЦИИ</h2>
+        <p class="press-tag-summary" hidden><strong></strong> · <a href="press.html#publications">Все материалы</a></p>
         <div class="press-grid">
           <article class="content-card press-story">
             <img src="assets/images/press/review-25.jpg" width="464" height="260" alt="" loading="lazy">
@@ -85,11 +87,11 @@
               <p>Мировые новости, аналитика, новости логистики, новости компаний</p>
             </div>
           </article>
-          <article class="content-card press-story">
+          <article class="content-card press-story" data-tags="digital terminal media">
             <img src="assets/images/press/digital-logistics.jpg" width="464" height="260" alt="" loading="lazy">
             <div>
               <time class="content-eyebrow" datetime="2026-06-30">30 ИЮНЯ 2026</time>
-              <h3><a href="https://cit-ekb.ru/feed/cit/2026/06/30/cit-predstavil-opyt-cifrovizacii-v-logistike/">C.I.T. представил опыт цифровизации в логистике</a></h3>
+              <h3><a href="digital-logistics.html">C.I.T. представил опыт цифровизации в логистике</a></h3>
               <p>Подробности — в материале «Эксперт-Урал»</p>
             </div>
           </article>

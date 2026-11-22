@@ -91,3 +91,6 @@
   .press-pages > [aria-hidden] { min-width: 12px; }
   .press-pages [rel="next"] { width: 100%; }
 }
+
+.press-tag-summary { margin-bottom: 1em; }
+.press-tag-summary a { color: var(--color-accent); text-decoration: underline; }
