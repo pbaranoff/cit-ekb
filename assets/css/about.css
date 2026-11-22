@@ -143,3 +143,10 @@
 @media (prefers-reduced-motion: reduce) {
   .about-photo > img { transition: none; }
 }
+
+.about-gallery-link {
+  align-self: flex-end;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+.about-gallery-link:hover { text-decoration: underline; }
