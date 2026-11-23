@@ -1,0 +1,69 @@
+.information .page-heading__lead { color: inherit; }
+.info-section { min-width: 0; padding: calc(32 * var(--u)); }
+.info-section__header {
+  display: flex;
+  align-items: center;
+  gap: calc(20 * var(--u));
+  margin-bottom: calc(20 * var(--u));
+}
+.info-section__icon, .info-link__arrow {
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 8px;
+}
+.info-section__icon {
+  width: calc(48 * var(--u));
+  aspect-ratio: 1;
+  background: #f9edee;
+}
+.info-section__header h2 { font-size: calc(24 * var(--u)); line-height: 1.2; }
+.info-section__header p {
+  margin-top: 4px;
+  color: #707070;
+  font-size: max(13px, calc(14 * var(--u)));
+  font-weight: 400;
+  line-height: 1.25;
+}
+.info-list { display: grid; gap: calc(8 * var(--u)); margin: 0; padding: 0; list-style: none; }
+.info-list li:not(:last-child) { border-bottom: 1px solid var(--color-border); }
+.info-link {
+  display: grid;
+  grid-template-columns: minmax(0, 700fr) minmax(0, 540fr) auto;
+  align-items: center;
+  gap: calc(24 * var(--u));
+  padding: calc(18 * var(--u)) calc(32 * var(--u)) calc(18 * var(--u)) 0;
+}
+.info-link__title { font-weight: 600; }
+.info-link__tags { display: flex; flex-wrap: wrap; justify-content: end; gap: 8px; }
+.info-link__tags > span {
+  padding: calc(6 * var(--u)) calc(12 * var(--u));
+  border-radius: 14px;
+  background: #f9edee;
+  color: var(--color-accent);
+  font-size: max(12px, calc(12 * var(--u)));
+  line-height: 1.25;
+}
+.info-link__arrow {
+  grid-column: 3;
+  width: calc(40 * var(--u));
+  aspect-ratio: 1;
+  background: var(--color-subtle);
+  border-radius: 2px;
+}
+.info-link:is(:hover, :focus-visible) .info-link__title { color: var(--color-accent); text-decoration: underline; }
+.info-link:is(:hover, :focus-visible) .info-link__arrow { background: #f9edee; }
+@media (max-width: 1359px) {
+  .info-section { padding: 24px; }
+  .info-link { grid-template-columns: minmax(0, 1fr) minmax(0, .65fr) auto; padding-right: 0; }
+}
+@media (max-width: 767px) {
+  .info-section { padding: 18px 16px; }
+  .info-section__header { align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+  .info-section__icon { width: 40px; }
+  .info-section__header h2 { font-size: 18px; }
+  .info-link { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; padding-block: 14px; }
+  .info-link__tags { grid-column: 1; justify-content: start; }
+  .info-link__arrow { grid-column: 2; grid-row: 1 / span 2; width: 36px; }
+  .info-link:not(:has(.info-link__tags)) .info-link__arrow { grid-row: 1; }
+}
