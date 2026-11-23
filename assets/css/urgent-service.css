@@ -40,8 +40,8 @@
 .urgent-row .calculate { justify-self: end; }
 .urgent-result {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.74fr);
-  gap: calc(24 * var(--u));
+  grid-template-columns: minmax(0, calc(300 * var(--u))) minmax(0, calc(240 * var(--u))) minmax(0, 1fr);
+  gap: calc(40 * var(--u));
   align-items: center;
   margin-top: calc(16 * var(--u));
   padding: calc(20 * var(--u)) calc(24 * var(--u));
@@ -49,13 +49,14 @@
   background: #f7f6f6;
 }
 .urgent-result:focus-visible { outline-offset: 2px; }
-.urgent-metric { display: grid; gap: calc(5 * var(--u)); }
-.urgent-metric > span { color: #666; }
+.urgent-metric { display: grid; gap: calc(4 * var(--u)); }
+.urgent-metric > span { color: #707070; font-weight: 500; }
 .urgent-metric strong { color: var(--color-accent); font-size: calc(24 * var(--u)); line-height: 1.2; }
-.urgent-result p { font-size: max(13px, calc(15 * var(--u))); }
+.urgent-result p { font-size: max(13px, calc(14 * var(--u))); }
+#wait-result p { color: #707070; }
 .urgent-result p a, .receipt-links > a:not(.button) { color: var(--color-accent); text-decoration: underline; }
 .urgent-result--empty { grid-template-columns: auto 1fr auto; background: #f9edee; }
-.urgent-result--empty p { font-size: inherit; }
+.urgent-result--empty p { font-size: inherit; font-weight: 500; }
 .urgent-hour, .receipt-close { display: grid; place-items: center; width: 44px; height: 44px; background: white; border-radius: 50%; }
 .offer-actions, .receipt-links { display: flex; gap: calc(12 * var(--u)); flex-wrap: wrap; align-items: center; }
 .offer-actions { justify-content: flex-end; }
@@ -75,6 +76,18 @@
 .receipt-summary dt { font-size: 13px; color: #666; }
 .receipt-summary dd { font-weight: 600; margin: 0; }
 .receipt-links { margin-top: 20px; }
+.urgent-example { color: var(--color-accent); text-decoration: underline; }
+@media (min-width: 1360px) {
+  .urgent-card {
+    padding-inline: calc(15 * var(--u)) calc(49 * var(--u));
+  }
+  #wait-result {
+    grid-template-columns: repeat(2, minmax(0, calc(320 * var(--u)))) minmax(0, calc(520 * var(--u)));
+  }
+  .urgent-result--empty { gap: calc(16 * var(--u)); }
+  .urgent-result--empty p { max-width: calc(860 * var(--u)); }
+  .urgent-hour { width: calc(40 * var(--u)); height: calc(40 * var(--u)); }
+}
 @media (max-width: 1359px) {
   .urgent-card { padding: 24px; }
   .urgent-row { padding-right: 0; gap: 16px; grid-template-columns: minmax(0, .9fr) minmax(0, 1.3fr) auto; }

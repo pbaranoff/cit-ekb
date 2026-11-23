@@ -140,7 +140,7 @@
       <header class="page-heading">
         <h1 id="urgent-service-title">Срочное обслуживание на контейнерном терминале</h1>
         <p class="page-heading__lead">Рассчитайте время ожидания в «живой очереди» или подберите свободный технологический слот на сегодня. Номер контейнера — 4 буквы и 7 цифр, например MSKU 1234567.</p>
-        <p class="urgent-demo">Демонстрационные данные на 22.06.2026.</p>
+        <p class="urgent-demo">Демонстрационные данные на 22.06.2026. <a class="urgent-example" href="urgent-service.html?results=1&amp;state=tracking">Посмотреть пример расчёта</a></p>
       </header>
       <noscript>Для расчёта включите JavaScript.</noscript>
 
@@ -157,14 +157,14 @@
               <label for="wait-number">НОМЕР КОНТЕЙНЕРА</label>
               <div class="code-field urgent-code">
                 <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                <input id="wait-number" name="container" type="text" placeholder=" " autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Z]{4}[0-9]{7}" title="Введите 4 латинские буквы и 7 цифр, например MSKU1234567" aria-describedby="wait-hint">
+                <input id="wait-number" data-example="TGHU8406215" name="container" type="text" placeholder=" " autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Z]{4}[0-9]{7}" title="Введите 4 латинские буквы и 7 цифр, например MSKU1234567" aria-describedby="wait-hint">
               </div>
               <p id="wait-hint">Номер вводится только для получаемого контейнера. Для сдачи контейнера просто нажмите «Рассчитать».</p>
             </div>
             <button class="button calculate" type="submit" aria-expanded="false" aria-controls="wait-result" disabled>Рассчитать</button>
           </form>
           <div class="urgent-result" id="wait-result" tabindex="-1" role="region" aria-label="Результат расчёта: Расчёт времени ожидания приёма-выдачи контейнера при прибытии в «живую очередь»" hidden>
-            <div class="urgent-metric"><span>ОЧЕРЕДЬ ОЖИДАНИЯ ВЪЕЗДА НА ТЕРМИНАЛ</span><strong>1 ч 45 мин</strong><small>на 12:31, демонстрационные данные</small></div>
+            <div class="urgent-metric"><span>ОЧЕРЕДЬ ОЖИДАНИЯ ВЪЕЗДА НА ТЕРМИНАЛ</span><strong>1 ч 45 мин</strong><small>на текущий момент — 12:31</small></div>
             <div class="urgent-metric"><span>ВРЕМЯ ОБСЛУЖИВАНИЯ НА ТЕРМИНАЛЕ</span><strong>0 ч 35 мин</strong><small>после въезда на терминал</small></div>
             <p>Расчёт ориентировочный и меняется в течение дня. Чтобы не ждать в очереди, <a href="time-slot.html">забронируйте слот</a>.</p>
           </div>
@@ -184,17 +184,17 @@
               <label for="available-pickup-number">НОМЕР КОНТЕЙНЕРА</label>
               <div class="code-field urgent-code">
                 <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                <input id="available-pickup-number" name="container" type="text" placeholder=" " autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Z]{4}[0-9]{7}" title="Введите 4 латинские буквы и 7 цифр, например MSKU1234567" required>
+                <input id="available-pickup-number" data-example="MSKU7350218" name="container" type="text" placeholder=" " autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Z]{4}[0-9]{7}" title="Введите 4 латинские буквы и 7 цифр, например MSKU1234567" required>
               </div>
             </div>
             <button class="button calculate" type="submit" aria-expanded="false" aria-controls="available-pickup-result" disabled>Рассчитать</button>
           </form>
           <div class="urgent-result" id="available-pickup-result" tabindex="-1" role="region" aria-label="Результат расчёта: Свободные технологические слоты для выдачи контейнера с терминала" hidden>
-            <div class="urgent-metric"><span>ПРЕДЛАГАЕМОЕ ВРЕМЯ ПРИБЫТИЯ · СВОБОДНЫЙ СЛОТ</span><strong class="offer-time">с 14:00 до 14:30</strong><small><time datetime="2026-06-22">22.06.2026</time> · демо</small></div>
+            <div class="urgent-metric"><span>ПРЕДЛАГАЕМОЕ ВРЕМЯ ПРИБЫТИЯ · СВОБОДНЫЙ СЛОТ</span><strong class="offer-time">с 14:00 до 14:30</strong><small><time datetime="2026-06-22">22.06.2026</time></small></div>
             <div class="urgent-metric"><span>СТОИМОСТЬ ОБСЛУЖИВАНИЯ</span><strong class="offer-price">4 800,00 ₽</strong><small>с НДС</small></div>
             <div class="offer-actions">
               <button class="button urgent-secondary" type="button" data-change-slot aria-controls="available-pickup-slots" aria-expanded="false">Выбрать другой слот</button>
-              <button class="button" type="button" data-book>Сформировать заявку <img src="assets/icons/arrow-right-white.svg" width="18" height="18" alt=""></button>
+              <button class="button" type="button" data-book>Сформировать заявку <img src="assets/icons/arrow-right-white.svg" width="20" height="20" alt=""></button>
             </div>
             <div class="offer-picker" id="available-pickup-slots" hidden>
               <label for="available-pickup-time">Время прибытия (Екатеринбург)</label>
@@ -211,7 +211,7 @@
           <div class="urgent-result urgent-result--empty" id="available-dropoff-result" tabindex="-1" role="region" aria-label="Результат расчёта: Свободные технологические слоты для приёма контейнера на терминал" hidden>
             <span class="urgent-hour"><img src="assets/icons/time-slot/hour.svg" width="20" height="20" alt=""></span>
             <p>Извините, свободных слотов нет. Оформите заявку на следующую дату или воспользуйтесь сервисом «Гарантированное обслуживание».</p>
-            <a class="button urgent-secondary" href="time-slot.html">Перейти к TIME-слоту <img src="assets/icons/about/arrow-right-accent.svg" width="18" height="18" alt=""></a>
+            <a class="button urgent-secondary" href="time-slot.html">Перейти к TIME-слоту <img src="assets/icons/about/arrow-right-accent.svg" width="20" height="20" alt=""></a>
           </div>
         </div>
         <div class="urgent-operation">
@@ -221,7 +221,7 @@
               <label for="available-combined-number">НОМЕР КОНТЕЙНЕРА</label>
               <div class="code-field urgent-code">
                 <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                <input id="available-combined-number" name="container" type="text" placeholder=" " autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Z]{4}[0-9]{7}" title="Введите 4 латинские буквы и 7 цифр, например MSKU1234567" required aria-describedby="available-combined-hint">
+                <input id="available-combined-number" data-example="CAIU5512093" name="container" type="text" placeholder=" " autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Z]{4}[0-9]{7}" title="Введите 4 латинские буквы и 7 цифр, например MSKU1234567" required aria-describedby="available-combined-hint">
               </div>
               <p id="available-combined-hint">Номер вводится только для получаемого контейнера</p>
             </div>
@@ -230,7 +230,7 @@
           <div class="urgent-result urgent-result--empty" id="available-combined-result" tabindex="-1" role="region" aria-label="Результат расчёта: Свободные технологические слоты для сдвоенной операции приёма-выдачи" hidden>
             <span class="urgent-hour"><img src="assets/icons/time-slot/hour.svg" width="20" height="20" alt=""></span>
             <p>Извините, свободных слотов по сдвоенной операции нет. Оформите заявку на одну из операций, на следующую дату или воспользуйтесь сервисом «Гарантированное обслуживание».</p>
-            <a class="button urgent-secondary" href="time-slot.html">Перейти к TIME-слоту <img src="assets/icons/about/arrow-right-accent.svg" width="18" height="18" alt=""></a>
+            <a class="button urgent-secondary" href="time-slot.html">Перейти к TIME-слоту <img src="assets/icons/about/arrow-right-accent.svg" width="20" height="20" alt=""></a>
           </div>
         </div>
       </section>
@@ -248,17 +248,17 @@
               <label for="guaranteed-pickup-number">НОМЕР КОНТЕЙНЕРА</label>
               <div class="code-field urgent-code">
                 <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                <input id="guaranteed-pickup-number" name="container" type="text" placeholder=" " autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Z]{4}[0-9]{7}" title="Введите 4 латинские буквы и 7 цифр, например MSKU1234567" required>
+                <input id="guaranteed-pickup-number" data-example="FESU2208471" name="container" type="text" placeholder=" " autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Z]{4}[0-9]{7}" title="Введите 4 латинские буквы и 7 цифр, например MSKU1234567" required>
               </div>
             </div>
             <button class="button calculate" type="submit" aria-expanded="false" aria-controls="guaranteed-pickup-result" disabled>Рассчитать</button>
           </form>
           <div class="urgent-result" id="guaranteed-pickup-result" tabindex="-1" role="region" aria-label="Результат расчёта: Выдача контейнера с терминала" hidden>
-            <div class="urgent-metric"><span>ПРЕДЛАГАЕМОЕ ВРЕМЯ ПРИБЫТИЯ · БЛИЖАЙШИЙ СЛОТ</span><strong class="offer-time">с 15:30 до 16:00</strong><small><time datetime="2026-06-22">22.06.2026</time> · демо</small></div>
+            <div class="urgent-metric"><span>ПРЕДЛАГАЕМОЕ ВРЕМЯ ПРИБЫТИЯ · БЛИЖАЙШИЙ СЛОТ</span><strong class="offer-time">с 15:30 до 16:00</strong><small><time datetime="2026-06-22">22.06.2026</time></small></div>
             <div class="urgent-metric"><span>СТОИМОСТЬ ОБСЛУЖИВАНИЯ</span><strong class="offer-price">6 900,00 ₽</strong><small>с НДС</small></div>
             <div class="offer-actions">
               <button class="button urgent-secondary" type="button" data-change-slot aria-controls="guaranteed-pickup-slots" aria-expanded="false">Выбрать другой слот</button>
-              <button class="button" type="button" data-book>Сформировать заявку <img src="assets/icons/arrow-right-white.svg" width="18" height="18" alt=""></button>
+              <button class="button" type="button" data-book>Сформировать заявку <img src="assets/icons/arrow-right-white.svg" width="20" height="20" alt=""></button>
             </div>
             <div class="offer-picker" id="guaranteed-pickup-slots" hidden>
               <label for="guaranteed-pickup-time">Время прибытия (Екатеринбург)</label>
@@ -273,11 +273,11 @@
             <button class="button calculate" type="submit" aria-expanded="false" aria-controls="guaranteed-dropoff-result" disabled>Рассчитать</button>
           </form>
           <div class="urgent-result" id="guaranteed-dropoff-result" tabindex="-1" role="region" aria-label="Результат расчёта: Приём контейнера на терминал" hidden>
-            <div class="urgent-metric"><span>ПРЕДЛАГАЕМОЕ ВРЕМЯ ПРИБЫТИЯ · БЛИЖАЙШИЙ СЛОТ</span><strong class="offer-time">с 13:00 до 13:30</strong><small><time datetime="2026-06-22">22.06.2026</time> · демо</small></div>
+            <div class="urgent-metric"><span>ПРЕДЛАГАЕМОЕ ВРЕМЯ ПРИБЫТИЯ · БЛИЖАЙШИЙ СЛОТ</span><strong class="offer-time">с 13:00 до 13:30</strong><small><time datetime="2026-06-22">22.06.2026</time></small></div>
             <div class="urgent-metric"><span>СТОИМОСТЬ ОБСЛУЖИВАНИЯ</span><strong class="offer-price">6 900,00 ₽</strong><small>с НДС</small></div>
             <div class="offer-actions">
               <button class="button urgent-secondary" type="button" data-change-slot aria-controls="guaranteed-dropoff-slots" aria-expanded="false">Выбрать другой слот</button>
-              <button class="button" type="button" data-book>Сформировать заявку <img src="assets/icons/arrow-right-white.svg" width="18" height="18" alt=""></button>
+              <button class="button" type="button" data-book>Сформировать заявку <img src="assets/icons/arrow-right-white.svg" width="20" height="20" alt=""></button>
             </div>
             <div class="offer-picker" id="guaranteed-dropoff-slots" hidden>
               <label for="guaranteed-dropoff-time">Время прибытия (Екатеринбург)</label>
@@ -292,18 +292,18 @@
               <label for="guaranteed-combined-number">НОМЕР КОНТЕЙНЕРА</label>
               <div class="code-field urgent-code">
                 <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                <input id="guaranteed-combined-number" name="container" type="text" placeholder=" " autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Z]{4}[0-9]{7}" title="Введите 4 латинские буквы и 7 цифр, например MSKU1234567" required aria-describedby="guaranteed-combined-hint">
+                <input id="guaranteed-combined-number" data-example="TKRU3091846" name="container" type="text" placeholder=" " autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Z]{4}[0-9]{7}" title="Введите 4 латинские буквы и 7 цифр, например MSKU1234567" required aria-describedby="guaranteed-combined-hint">
               </div>
               <p id="guaranteed-combined-hint">Номер вводится только для получаемого контейнера</p>
             </div>
             <button class="button calculate" type="submit" aria-expanded="false" aria-controls="guaranteed-combined-result" disabled>Рассчитать</button>
           </form>
           <div class="urgent-result" id="guaranteed-combined-result" tabindex="-1" role="region" aria-label="Результат расчёта: Сдвоенная операция: приём и выдача контейнера" hidden>
-            <div class="urgent-metric"><span>ПРЕДЛАГАЕМОЕ ВРЕМЯ ПРИБЫТИЯ · БЛИЖАЙШИЙ СЛОТ</span><strong class="offer-time">с 16:30 до 17:00</strong><small><time datetime="2026-06-22">22.06.2026</time> · демо</small></div>
+            <div class="urgent-metric"><span>ПРЕДЛАГАЕМОЕ ВРЕМЯ ПРИБЫТИЯ · БЛИЖАЙШИЙ СЛОТ</span><strong class="offer-time">с 16:30 до 17:00</strong><small><time datetime="2026-06-22">22.06.2026</time></small></div>
             <div class="urgent-metric"><span>СТОИМОСТЬ ОБСЛУЖИВАНИЯ</span><strong class="offer-price">11 500,00 ₽</strong><small>с НДС</small></div>
             <div class="offer-actions">
               <button class="button urgent-secondary" type="button" data-change-slot aria-controls="guaranteed-combined-slots" aria-expanded="false">Выбрать другой слот</button>
-              <button class="button" type="button" data-book>Сформировать заявку <img src="assets/icons/arrow-right-white.svg" width="18" height="18" alt=""></button>
+              <button class="button" type="button" data-book>Сформировать заявку <img src="assets/icons/arrow-right-white.svg" width="20" height="20" alt=""></button>
             </div>
             <div class="offer-picker" id="guaranteed-combined-slots" hidden>
               <label for="guaranteed-combined-time">Время прибытия (Екатеринбург)</label>

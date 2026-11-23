@@ -3,6 +3,13 @@
   const receipt = document.querySelector('.urgent-receipt');
   if (!page || !receipt) return;
 
+  const showExample = new URLSearchParams(location.search).get('results') === '1';
+  if (showExample) {
+    const exampleLink = page.querySelector('.urgent-example');
+    exampleLink.href = 'urgent-service.html';
+    exampleLink.textContent = 'Вернуться к пустой форме';
+  }
+
   function resetOffer(result) {
     const select = result.querySelector('select');
     if (!select) return;
@@ -18,7 +25,17 @@
     const calculate = form.querySelector('.calculate');
     const input = form.elements.namedItem('container');
 
+    function setResultVisible(visible) {
+      result.hidden = !visible;
+      calculate.setAttribute('aria-expanded', String(visible));
+      if (visible) resetOffer(result);
+    }
+
     calculate.disabled = false;
+    if (showExample) {
+      if (input) input.value = input.dataset.example;
+      setResultVisible(true);
+    }
     input?.addEventListener('input', () => {
       const normalize = value => value.replace(/\s+/g, '').toUpperCase();
       const position = normalize(input.value.slice(0, input.selectionStart)).length;
@@ -27,14 +44,11 @@
         input.setSelectionRange(position, position);
       }
       input.setCustomValidity(input.validity.patternMismatch ? 'Введите 4 латинские буквы и 7 цифр, например MSKU1234567.' : '');
-      result.hidden = true;
-      calculate.setAttribute('aria-expanded', 'false');
+      setResultVisible(input.value !== '' && input.validity.valid);
     });
     form.addEventListener('submit', event => {
       event.preventDefault();
-      resetOffer(result);
-      result.hidden = false;
-      calculate.setAttribute('aria-expanded', 'true');
+      setResultVisible(true);
       result.focus({ preventScroll: true });
       result.scrollIntoView({ block: 'nearest' });
     });
