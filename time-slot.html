@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="assets/css/time-slot.css">
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/interior.js" defer></script>
-  <script src="assets/js/time-slot-pdf.js" defer></script>
+  <script src="assets/js/time-slot-booking.js" defer></script>
   <script src="assets/js/time-slot.js" defer></script>
 </head>
 <body class="page-interior page-time-slot" data-page="time-slot">
@@ -130,7 +130,6 @@
           <li><a href="index.html">ГЛАВНАЯ</a></li>
           <li><a href="index.html#services">ОНЛАЙН-СЕРВИС</a></li>
           <li><span aria-current="page">ГАРАНТИРОВАННОЕ ОБСЛУЖИВАНИЕ</span></li>
-          <li id="receipt-crumb" hidden><span aria-current="page">ЗАЯВКА СФОРМИРОВАНА</span></li>
         </ol>
       </nav>
       <nav class="service-links" aria-label="Онлайн-сервисы терминала">
@@ -236,15 +235,6 @@
           </section>
         </form>
 
-        <section class="booking-card content-card receipt" id="receipt" aria-labelledby="terms-title" hidden>
-          <header><p class="content-eyebrow">УСЛОВИЯ ИСПОЛНЕНИЯ ЗАЯВКИ</p><h2 id="terms-title">Чтобы терминал обслужил вас в выбранный слот</h2></header>
-          <div class="term"><div class="term-icon"><img src="assets/icons/time-slot/building.svg" alt=""></div><div><h3>1. Заключите терминальный договор</h3><p>Не менее чем за 24 часа до времени выбранного слота необходимо заключить терминальный договор с исполнителем.</p></div><span id="contract-deadline"></span></div>
-          <div class="term"><div class="term-icon"><img src="assets/icons/time-slot/clock.svg" alt=""></div><div><h3>2. Внесите авансовый платёж</h3><p>Услуга будет оказана только по факту получения исполнителем авансового платежа в размере не менее 100% стоимости заказанной услуги.</p></div><span id="advance"></span></div>
-          <div class="term"><div class="term-icon"><img src="assets/icons/time-slot/list.svg" alt=""></div><div><h3>3. Подготовьте доверенность</h3><p>Для получения контейнера необходимо предоставить оригинал доверенности грузоотправителя (груженый контейнер) или оригинал доверенности владельца контейнера (порожний контейнер).</p></div><span>оригинал при въезде</span></div>
-          <p class="contract-note"><img src="assets/icons/time-slot/hour.svg" alt="">При несоблюдении любого из условий услуга по выдаче контейнера не будет произведена, при этом сумма понесённых расходов исполнителя по подготовке контейнера к выдаче будет отнесена на заявителя.</p>
-          <div class="receipt-actions"><a class="button" href="https://cit-ekb.ru/cooperation/">Заключить договор →</a><a href="https://cabinet.cit-ekb.ru/">Регистрация в личном кабинете →</a></div>
-        </section>
-
         <aside class="booking-card content-card booking-summary" aria-labelledby="summary-title">
           <header><p class="content-eyebrow">ВАША ЗАЯВКА · TIME-СЛОТ</p><h2 id="summary-title">Гарантированное обслуживание</h2></header>
           <dl id="booking-details"></dl>
@@ -254,14 +244,6 @@
             <button class="button booking-submit" form="booking-form" type="submit" disabled>Сформировать заявку <img src="assets/icons/arrow-right-white.svg" width="18" height="18" alt=""></button>
             <p class="booking-note">Демонстрационный расчёт. Для реальной записи воспользуйтесь личным кабинетом.</p>
             <a class="booking-link" href="https://cabinet.cit-ekb.ru/">Войти в личный кабинет →</a>
-          </div>
-          <div id="receipt-actions" hidden>
-            <p class="booking-meta">СТАТУС</p>
-            <strong class="receipt-status">Ожидает договора и оплаты</strong>
-            <p class="booking-note" id="receipt-reference"></p>
-            <p class="booking-note">Демонстрационная заявка. Бронирование и отправка в терминал отключены.</p>
-            <button class="button service-back" id="download" type="button">Скачать заявку (PDF)</button>
-            <button class="booking-link" id="edit-booking" type="button">Изменить заявку</button>
           </div>
         </aside>
       </div>

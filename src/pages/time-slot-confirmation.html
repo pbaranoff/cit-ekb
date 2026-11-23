@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#932934">
+  <title>Гарантированное обслуживание — заявка сформирована — СиАйТи Терминал</title>
+  <meta name="description" content="Параметры сформированной заявки на TIME-слот и условия обслуживания.">
+  <link rel="preload" href="assets/fonts/PFBeauSansPro-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/PFBeauSansPro-Black.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/interior.css">
+  <link rel="stylesheet" href="assets/css/online-services.css">
+  <link rel="stylesheet" href="assets/css/time-slot.css">
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/interior.js" defer></script>
+  <script src="assets/js/time-slot-booking.js" defer></script>
+  <script src="assets/js/time-slot-pdf.js" defer></script>
+  <script src="assets/js/time-slot-receipt.js" defer></script>
+</head>
+<body class="page-interior page-time-slot" data-page="time-slot-confirmation">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <!-- include:partials/header.html -->
+
+  <main class="inner-layout" id="main" tabindex="-1">
+    <div class="inner-tools">
+      <details class="page-tools" open>
+        <summary>
+          <img class="icon" src="assets/icons/cube.svg" alt="" aria-hidden="true">
+          <span>Контейнер и полезные ссылки</span>
+          <img class="icon" src="assets/icons/chevron-down.svg" alt="" aria-hidden="true">
+        </summary>
+        <div class="page-tools__content">
+          <!-- include:partials/sidebar.html -->
+        </div>
+      </details>
+      <!-- include:partials/sidebar-toggle.html -->
+    </div>
+
+    <article class="inner-content time-slot" aria-labelledby="time-slot-title">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <ol>
+          <li><a href="index.html">ГЛАВНАЯ</a></li>
+          <li><a href="index.html#services">ОНЛАЙН-СЕРВИС</a></li>
+          <li><a href="time-slot.html">ГАРАНТИРОВАННОЕ ОБСЛУЖИВАНИЕ</a></li>
+          <li><span aria-current="page">ЗАЯВКА СФОРМИРОВАНА</span></li>
+        </ol>
+      </nav>
+      <!-- include:partials/service-links.html -->
+
+      <header class="page-heading">
+        <h1 id="time-slot-title">Гарантированное обслуживание</h1>
+        <p class="page-heading__lead" id="receipt-lead">Чтобы увидеть подтверждение, сформируйте заявку на TIME-слот.</p>
+      </header>
+      <a class="button service-back" id="start-booking" href="time-slot.html">Перейти к выбору слота</a>
+      <div class="booking-layout receipt-layout" id="confirmation" hidden>
+        <section class="booking-card content-card receipt" id="receipt" aria-labelledby="terms-title">
+          <header><p class="content-eyebrow">УСЛОВИЯ ИСПОЛНЕНИЯ ЗАЯВКИ</p><h2 id="terms-title">Чтобы терминал обслужил вас в выбранный слот</h2></header>
+          <div class="term"><div class="term-icon"><img src="assets/icons/time-slot/building.svg" alt=""></div><div><h3>1. Заключите терминальный договор</h3><p>Не менее чем за 24 часа до времени выбранного слота необходимо заключить терминальный договор с исполнителем.</p></div><span id="contract-deadline"></span></div>
+          <div class="term"><div class="term-icon"><img src="assets/icons/time-slot/clock.svg" alt=""></div><div><h3>2. Внесите авансовый платёж</h3><p>Услуга будет оказана только по факту получения исполнителем авансового платежа в размере не менее 100% стоимости заказанной услуги.</p></div><span id="advance"></span></div>
+          <div class="term"><div class="term-icon"><img src="assets/icons/time-slot/list.svg" alt=""></div><div><h3>3. Подготовьте доверенность</h3><p>Для получения контейнера необходимо предоставить оригинал доверенности грузоотправителя (груженый контейнер) или оригинал доверенности владельца контейнера (порожний контейнер).</p></div><span>оригинал при въезде</span></div>
+          <p class="contract-note"><img src="assets/icons/time-slot/hour.svg" alt="">При несоблюдении любого из условий услуга по выдаче контейнера не будет произведена, при этом сумма понесённых расходов исполнителя по подготовке контейнера к выдаче будет отнесена на заявителя.</p>
+          <div class="receipt-actions"><a class="button" href="https://cit-ekb.ru/cooperation/">Заключить договор <img src="assets/icons/arrow-right-white.svg" width="18" height="18" alt=""></a></div>
+        </section>
+
+        <aside class="booking-card content-card booking-summary" aria-labelledby="summary-title">
+          <header><p class="content-eyebrow">ВАША ЗАЯВКА · TIME-СЛОТ</p><h2 id="summary-title">Гарантированное обслуживание</h2></header>
+          <dl id="booking-details"></dl>
+          <p class="booking-price">Стоимость <strong id="booking-price"></strong></p>
+          <div id="receipt-actions">
+            <p class="booking-meta">СТАТУС</p>
+            <strong class="receipt-status">Ожидает договора и оплаты</strong>
+            <p class="booking-note"><span id="receipt-reference"></span>. Для реальной записи перейдите в <a class="booking-link" href="https://cabinet.cit-ekb.ru/">личный кабинет</a>.</p>
+            <button class="button service-back" id="download" type="button">Скачать заявку (PDF)</button>
+            <a class="booking-link" id="edit-booking" href="time-slot.html">Изменить заявку</a>
+          </div>
+        </aside>
+      </div>
+      <a class="button service-back" href="index.html"><img src="assets/icons/about/arrow-right-accent.svg" width="18" height="18" alt="">Вернуться на главную</a>
+    </article>
+  </main>
+  <!-- include:partials/mobile-menu.html -->
+</body>
+</html>

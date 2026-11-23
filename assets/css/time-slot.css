@@ -99,3 +99,25 @@
   .step-head { align-items: flex-start; }
   .receipt-actions { flex-direction: column; align-items: stretch; }
 }
+
+.receipt-layout { align-items: stretch; }
+.receipt-layout .booking-summary { position: static; }
+[data-page="time-slot-confirmation"] .page-heading__lead { font-weight: 500; }
+.receipt-layout .content-eyebrow { font-weight: 500; margin-bottom: 0; }
+.receipt-layout .booking-summary dl { margin-top: calc(14 * var(--u)); }
+.receipt-layout .booking-summary dl > div { padding-block: calc(10 * var(--u)); }
+.receipt-layout .receipt-status { font-size: max(13px, calc(14 * var(--u))); }
+.receipt-layout .term { padding-block: calc(20 * var(--u)); }
+.receipt-layout .term > span { justify-self: end; font-size: 12px; }
+.receipt-layout .term-icon img { width: 24px; height: 24px; }
+.receipt-layout .term h3 { font-size: max(16px, calc(18 * var(--u))); font-weight: 600; }
+.receipt-layout .term > span { white-space: nowrap; }
+.receipt-layout .contract-note img { flex: none; box-sizing: content-box; padding: 10px; background: #fff; border-radius: 50%; }
+.receipt-layout #edit-booking { display: inline-block; }
+@media (max-width: 1099px) {
+  .receipt-layout .booking-summary { grid-row: 1; }
+}
+@media (max-width: 759px) {
+  .receipt-layout .term > span { white-space: normal; justify-self: start; }
+  .receipt-layout .contract-note { align-items: flex-start; }
+}

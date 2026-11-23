@@ -1,0 +1,200 @@
+<!doctype html>
+<!-- Generated from src/pages/time-slot-confirmation.html. Edit source/partials, then run node scripts/build.mjs. -->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#932934">
+  <title>Гарантированное обслуживание — заявка сформирована — СиАйТи Терминал</title>
+  <meta name="description" content="Параметры сформированной заявки на TIME-слот и условия обслуживания.">
+  <link rel="preload" href="assets/fonts/PFBeauSansPro-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/PFBeauSansPro-Black.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/interior.css">
+  <link rel="stylesheet" href="assets/css/online-services.css">
+  <link rel="stylesheet" href="assets/css/time-slot.css">
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/interior.js" defer></script>
+  <script src="assets/js/time-slot-booking.js" defer></script>
+  <script src="assets/js/time-slot-pdf.js" defer></script>
+  <script src="assets/js/time-slot-receipt.js" defer></script>
+</head>
+<body class="page-interior page-time-slot" data-page="time-slot-confirmation">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="site-switcher">
+      <p class="site-switcher__label">ВЫБЕРИТЕ НУЖНЫЙ САЙТ</p>
+      <div class="site-switcher__logos">
+        <a class="site-switcher__cit" href="index.html" aria-label="СиАйТи — главная"><img class="" src="assets/images/cit-logo.png" alt="СиАйТи — Container Intermodal Technology" width="182" height="51"></a>
+        <a class="site-switcher__ekt" href="ekt.html"><img class="" src="assets/images/ekt-logo.png" alt="Екатеринбургский таможенный терминал" width="176" height="51"></a>
+      </div>
+    </div>
+    <div class="site-header__desktop">
+      <nav class="main-nav" aria-label="Основная навигация" data-dropdown-scope>
+        <a href="account.html">ЛИЧНЫЙ КАБИНЕТ</a>
+        <a href="prices.html">СТОИМОСТЬ УСЛУГ</a>
+        <a href="index.html#services">ОНЛАЙН-СЕРВИС</a>
+        <details class="nav-dropdown nav-dropdown--services" data-dropdown><summary>УСЛУГИ<img class="icon " src="assets/icons/chevron-down.svg" alt="" aria-hidden="true"></summary><div class="nav-dropdown__panel"><a href="arrivals.html">ПРИБЫТИЕ ТРАНСПОРТНЫХ СРЕДСТВ НА КОНТЕЙНЕРНЫЙ ТЕРМИНАЛ</a><a href="time-slot.html">ВЫБОР СЕРВИСА ГАРАНТИРОВАННОГО ОБСЛУЖИВАНИЯ НА КОНТЕЙНЕРНОМ ТЕРМИНАЛЕ</a><a href="urgent-service.html">СРОЧНОЕ ОБСЛУЖИВАНИЕ НА КОНТЕЙНЕРНОМ ТЕРМИНАЛЕ</a></div></details>
+        <a href="directions.html">СХЕМА ПРОЕЗДА</a>
+        <details class="nav-dropdown nav-dropdown--contacts" data-dropdown><summary>КОНТАКТЫ<img class="icon " src="assets/icons/chevron-down.svg" alt="" aria-hidden="true"></summary><div class="nav-dropdown__panel"><a href="mailto:info@cit-ekb.ru">info@cit-ekb.ru</a><a href="tel:+73430000000">+7 343 000-00-00</a></div></details>
+      </nav>
+      <div class="contacts contacts--header"><a class="contacts__phone" href="tel:+73430000000"><img class="icon " src="assets/icons/truck.svg" alt="" aria-hidden="true"><span>+7 343 000-00-00</span></a><a class="contacts__email" href="mailto:info@cit-ekb.ru">info@cit-ekb.ru</a></div>
+      <a class="button request-button" href="request.html"><span>Подать заявку</span><img class="icon " src="assets/icons/arrow-right-white.svg" alt="" aria-hidden="true"></a>
+    </div>
+    <button class="menu-toggle" type="button" data-menu-open aria-label="Открыть меню" aria-haspopup="dialog" aria-controls="mobile-menu" aria-expanded="false"><img class="icon " src="assets/icons/menu.svg" alt="" aria-hidden="true"></button>
+  </header>
+
+  <main class="inner-layout" id="main" tabindex="-1">
+    <div class="inner-tools">
+      <details class="page-tools" open>
+        <summary>
+          <img class="icon" src="assets/icons/cube.svg" alt="" aria-hidden="true">
+          <span>Контейнер и полезные ссылки</span>
+          <img class="icon" src="assets/icons/chevron-down.svg" alt="" aria-hidden="true">
+        </summary>
+        <div class="page-tools__content">
+          <aside class="sidebar" id="sidebar" aria-label="Информация и поиск контейнера">
+            <nav class="utility-links utility-links--top" aria-label="О компании и сервисе">
+              <a class="utility-link" href="about.html"><img class="icon " src="assets/icons/building.svg" alt="" aria-hidden="true"><span>ИНФОРМАЦИЯ О КОМПАНИИ</span></a>
+              <a class="utility-link" href="rules.html"><img class="icon " src="assets/icons/list.svg" alt="" aria-hidden="true"><span>ПРАВИЛА ПОЛЬЗОВАНИЯ СЕРВИСОМ</span></a>
+            </nav>
+
+            <section class="container-search panel" aria-labelledby="search-title">
+              <div class="panel__heading"><h2 id="search-title">ВАШ КОНТЕЙНЕР</h2><img class="icon " src="assets/icons/cube.svg" alt="" aria-hidden="true"></div>
+              <form id="container-form" novalidate>
+                <label class="container-search__label" for="container-prefix">НОМЕР КОНТЕЙНЕРА</label>
+                <div class="container-search__fields">
+                  <div class="container-code">
+                    <div class="code-field code-field--prefix">
+                      <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                      <input id="container-prefix" name="prefix" type="text" maxlength="4" pattern="[A-Za-z]{4}" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Буквенный код контейнера, 4 латинские буквы" aria-describedby="container-error">
+                    </div>
+                    <div class="code-field code-field--number">
+                      <div class="code-field__cells" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                      <input id="container-number" name="number" type="text" inputmode="numeric" maxlength="7" pattern="[0-9]{7}" autocomplete="off" aria-label="Номер контейнера, 7 цифр" aria-describedby="container-error">
+                    </div>
+                  </div>
+                  <button class="search-control" type="submit" aria-label="Найти контейнер"><img class="icon " src="assets/icons/search-submit.svg" alt="" aria-hidden="true"></button>
+                  <button class="search-control" type="reset" data-container-clear aria-label="Очистить номер контейнера"><img class="icon " src="assets/icons/search-clear.svg" alt="" aria-hidden="true"></button>
+                </div>
+                <p class="field-message" id="container-error" role="status" aria-live="polite" hidden></p>
+              </form>
+            </section>
+
+            <!-- Figma fixture only. Hidden by default; ?state=tracking previews the supplied design. -->
+            <section class="tracking panel" id="container-tracking" aria-labelledby="tracking-title" hidden>
+              <h2 id="tracking-title">ДВИЖЕНИЕ КОНТЕЙНЕРА</h2>
+              <section class="tracking__group" aria-labelledby="tracking-group-0">
+                <h3 id="tracking-group-0">ПРИБЫТИЕ КОНТЕЙНЕРНОГО ПОЕЗДА</h3>
+                <dl class="tracking__rows">
+                  <div class="tracking-row"><dt>В пути следования</dt><dd><span class="tracking-row__value">КП № 2029</span><span class="tracking-row__meta">осталось 6554 км</span></dd></div>
+                  <div class="tracking-row"><dt>Отставлен в пути</dt><dd><span class="tracking-row__value">22.06.2026</span><span class="tracking-row__meta">ст. Ташкент</span></dd></div>
+                  <div class="tracking-row"><dt>Прибыл на станцию</dt><dd><span class="tracking-row__value">23.06.2026</span></dd></div>
+                  <div class="tracking-row"><dt>Подан на терминал</dt><dd><span class="tracking-row__value">24.06.2026</span></dd></div>
+                </dl>
+              </section>
+              <section class="tracking__group" aria-labelledby="tracking-group-1">
+                <h3 id="tracking-group-1">ОТПРАВЛЕНИЕ КОНТЕЙНЕРНОГО ПОЕЗДА</h3>
+                <dl class="tracking__rows">
+                  <div class="tracking-row"><dt>Не оформлен</dt><dd><span class="tracking-row__value">—</span><span class="tracking-row__meta">дата не определена</span></dd></div>
+                  <div class="tracking-row"><dt>Формируется КП</dt><dd><span class="tracking-row__value">ВЛ № 1137</span><span class="tracking-row__meta">23.06.2026</span></dd></div>
+                  <div class="tracking-row"><dt>Отправлен</dt><dd><span class="tracking-row__value">ВЛ № 1136</span><span class="tracking-row__meta">23.06.2026</span></dd></div>
+                  <div class="tracking-row"><dt>Отставлен в пути</dt><dd><span class="tracking-row__value">22.06.2026</span><span class="tracking-row__meta">ст. Войновка</span></dd></div>
+                  <div class="tracking-row"><dt>Прибыл на станцию</dt><dd><span class="tracking-row__value">22.06.2026</span><span class="tracking-row__meta">Владивосток-эксп.</span></dd></div>
+                </dl>
+              </section>
+              <section class="tracking__group" aria-labelledby="tracking-group-2">
+                <h3 id="tracking-group-2">СТАТУС НАХОЖДЕНИЯ НА ТЕРМИНАЛЕ</h3>
+                <dl class="tracking__rows">
+                  <div class="tracking-row"><dt>Без оплаты</dt><dd><span class="tracking-row__value">до 29.06.2026</span></dd></div>
+                  <div class="tracking-row"><dt>Хранение на терминале</dt><dd><span class="tracking-row__value">с 20.06.2026</span></dd></div>
+                  <div class="tracking-row"><dt>Хранение на СВХ</dt><dd><span class="tracking-row__value">с 21.06.2026</span></dd></div>
+                </dl>
+              </section>
+            </section>
+
+            <nav class="utility-links utility-links--bottom" aria-label="Полезные ссылки">
+              <a class="utility-link" href="information.html"><img class="icon " src="assets/icons/list.svg" alt="" aria-hidden="true"><span>ПОЛЕЗНАЯ ИНФОРМАЦИЯ</span><img class="icon utility-link__arrow" src="assets/icons/arrow-right.svg" alt="" aria-hidden="true"></a>
+              <a class="utility-link" href="fesco.html"><img class="fesco-mark" src="assets/images/fesco.png" width="24" height="14" alt=""><span>FESCO</span><img class="icon utility-link__arrow" src="assets/icons/arrow-right.svg" alt="" aria-hidden="true"></a>
+            </nav>
+          </aside>
+        </div>
+      </details>
+      <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="true">
+        <img class="icon " src="assets/icons/arrow-right-small.svg" alt="" aria-hidden="true"><span data-sidebar-label>Скрыть</span>
+      </button>
+    </div>
+
+    <article class="inner-content time-slot" aria-labelledby="time-slot-title">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <ol>
+          <li><a href="index.html">ГЛАВНАЯ</a></li>
+          <li><a href="index.html#services">ОНЛАЙН-СЕРВИС</a></li>
+          <li><a href="time-slot.html">ГАРАНТИРОВАННОЕ ОБСЛУЖИВАНИЕ</a></li>
+          <li><span aria-current="page">ЗАЯВКА СФОРМИРОВАНА</span></li>
+        </ol>
+      </nav>
+      <nav class="service-links" aria-label="Онлайн-сервисы терминала">
+        <a href="arrivals.html"><span>ON-LINE ИНФОРМИРОВАНИЕ</span>ПРИБЫТИЕ ТРАНСПОРТНЫХ СРЕДСТВ</a>
+        <a href="time-slot.html"><span>TIME-СЛОТ</span>ГАРАНТИРОВАННОЕ ОБСЛУЖИВАНИЕ</a>
+        <a href="urgent-service.html"><span>ЗАЯВКА В ДАТУ ПОДАЧИ</span>СРОЧНОЕ ОБСЛУЖИВАНИЕ</a>
+      </nav>
+
+      <header class="page-heading">
+        <h1 id="time-slot-title">Гарантированное обслуживание</h1>
+        <p class="page-heading__lead" id="receipt-lead">Чтобы увидеть подтверждение, сформируйте заявку на TIME-слот.</p>
+      </header>
+      <a class="button service-back" id="start-booking" href="time-slot.html">Перейти к выбору слота</a>
+      <div class="booking-layout receipt-layout" id="confirmation" hidden>
+        <section class="booking-card content-card receipt" id="receipt" aria-labelledby="terms-title">
+          <header><p class="content-eyebrow">УСЛОВИЯ ИСПОЛНЕНИЯ ЗАЯВКИ</p><h2 id="terms-title">Чтобы терминал обслужил вас в выбранный слот</h2></header>
+          <div class="term"><div class="term-icon"><img src="assets/icons/time-slot/building.svg" alt=""></div><div><h3>1. Заключите терминальный договор</h3><p>Не менее чем за 24 часа до времени выбранного слота необходимо заключить терминальный договор с исполнителем.</p></div><span id="contract-deadline"></span></div>
+          <div class="term"><div class="term-icon"><img src="assets/icons/time-slot/clock.svg" alt=""></div><div><h3>2. Внесите авансовый платёж</h3><p>Услуга будет оказана только по факту получения исполнителем авансового платежа в размере не менее 100% стоимости заказанной услуги.</p></div><span id="advance"></span></div>
+          <div class="term"><div class="term-icon"><img src="assets/icons/time-slot/list.svg" alt=""></div><div><h3>3. Подготовьте доверенность</h3><p>Для получения контейнера необходимо предоставить оригинал доверенности грузоотправителя (груженый контейнер) или оригинал доверенности владельца контейнера (порожний контейнер).</p></div><span>оригинал при въезде</span></div>
+          <p class="contract-note"><img src="assets/icons/time-slot/hour.svg" alt="">При несоблюдении любого из условий услуга по выдаче контейнера не будет произведена, при этом сумма понесённых расходов исполнителя по подготовке контейнера к выдаче будет отнесена на заявителя.</p>
+          <div class="receipt-actions"><a class="button" href="https://cit-ekb.ru/cooperation/">Заключить договор <img src="assets/icons/arrow-right-white.svg" width="18" height="18" alt=""></a></div>
+        </section>
+
+        <aside class="booking-card content-card booking-summary" aria-labelledby="summary-title">
+          <header><p class="content-eyebrow">ВАША ЗАЯВКА · TIME-СЛОТ</p><h2 id="summary-title">Гарантированное обслуживание</h2></header>
+          <dl id="booking-details"></dl>
+          <p class="booking-price">Стоимость <strong id="booking-price"></strong></p>
+          <div id="receipt-actions">
+            <p class="booking-meta">СТАТУС</p>
+            <strong class="receipt-status">Ожидает договора и оплаты</strong>
+            <p class="booking-note"><span id="receipt-reference"></span>. Для реальной записи перейдите в <a class="booking-link" href="https://cabinet.cit-ekb.ru/">личный кабинет</a>.</p>
+            <button class="button service-back" id="download" type="button">Скачать заявку (PDF)</button>
+            <a class="booking-link" id="edit-booking" href="time-slot.html">Изменить заявку</a>
+          </div>
+        </aside>
+      </div>
+      <a class="button service-back" href="index.html"><img src="assets/icons/about/arrow-right-accent.svg" width="18" height="18" alt="">Вернуться на главную</a>
+    </article>
+  </main>
+  <dialog class="mobile-menu" id="mobile-menu" aria-label="Меню сайта">
+    <div class="mobile-menu__top">
+      <a href="index.html" aria-label="СиАйТи — главная"><img class="mobile-menu__logo" src="assets/images/cit-logo.png" alt="СиАйТи — Container Intermodal Technology" width="182" height="51"></a>
+      <button class="menu-toggle" type="button" data-menu-close aria-label="Закрыть меню"><img class="icon " src="assets/icons/close.svg" alt="" aria-hidden="true"></button>
+    </div>
+    <nav class="mobile-menu__nav" aria-label="Мобильная навигация" data-dropdown-scope>
+      <a href="account.html">ЛИЧНЫЙ КАБИНЕТ</a>
+        <a href="prices.html">СТОИМОСТЬ УСЛУГ</a>
+        <a href="index.html#services">ОНЛАЙН-СЕРВИС</a>
+        <details class="nav-dropdown nav-dropdown--services" data-dropdown><summary>УСЛУГИ<img class="icon " src="assets/icons/chevron-down.svg" alt="" aria-hidden="true"></summary><div class="nav-dropdown__panel"><a href="arrivals.html">ПРИБЫТИЕ ТРАНСПОРТНЫХ СРЕДСТВ НА КОНТЕЙНЕРНЫЙ ТЕРМИНАЛ</a><a href="time-slot.html">ВЫБОР СЕРВИСА ГАРАНТИРОВАННОГО ОБСЛУЖИВАНИЯ НА КОНТЕЙНЕРНОМ ТЕРМИНАЛЕ</a><a href="urgent-service.html">СРОЧНОЕ ОБСЛУЖИВАНИЕ НА КОНТЕЙНЕРНОМ ТЕРМИНАЛЕ</a></div></details>
+        <a href="directions.html">СХЕМА ПРОЕЗДА</a>
+        <details class="nav-dropdown nav-dropdown--contacts" data-dropdown><summary>КОНТАКТЫ<img class="icon " src="assets/icons/chevron-down.svg" alt="" aria-hidden="true"></summary><div class="nav-dropdown__panel"><a href="mailto:info@cit-ekb.ru">info@cit-ekb.ru</a><a href="tel:+73430000000">+7 343 000-00-00</a></div></details>
+    </nav>
+    <div class="mobile-menu__bottom">
+      <div class="mobile-menu__switcher">
+        <p>ВЫБЕРИТЕ НУЖНЫЙ САЙТ</p>
+        <div class="mobile-menu__sites">
+          <a href="index.html"><img class="" src="assets/images/cit-logo.png" alt="СиАйТи — Container Intermodal Technology" width="182" height="51"></a>
+          <a href="ekt.html"><img class="" src="assets/images/ekt-logo.png" alt="Екатеринбургский таможенный терминал" width="176" height="51"></a>
+        </div>
+      </div>
+      <div class="contacts contacts--menu"><a class="contacts__phone" href="tel:+73430000000"><img class="icon " src="assets/icons/truck.svg" alt="" aria-hidden="true"><span>+7 343 000-00-00</span></a><a class="contacts__email" href="mailto:info@cit-ekb.ru">info@cit-ekb.ru</a></div>
+      <a class="button request-button" href="request.html"><span>Подать заявку</span><img class="icon " src="assets/icons/arrow-right-white.svg" alt="" aria-hidden="true"></a>
+    </div>
+  </dialog>
+</body>
+</html>

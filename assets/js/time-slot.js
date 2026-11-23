@@ -5,9 +5,6 @@
   const byId = id => document.getElementById(id);
   const operations = [...form.querySelectorAll('.operation')];
   const inn = byId('inn');
-  const heading = byId('time-slot-title');
-  const lead = document.querySelector('.time-slot .page-heading__lead');
-  const original = { title: heading.textContent, lead: lead.textContent };
   const day = 86400000;
   const yekaterinburgOffset = 5 * 3600000;
   const demoOperationPrice = 4800;
@@ -19,8 +16,6 @@
   let selectedDate = today() + 2 * day;
   let selectedTime = 600;
   let month = firstOfMonth(selectedDate);
-  let receipt = null;
-  let draftNumber = 0;
 
   function firstOfMonth(date, offset = 0) {
     const d = new Date(date);
@@ -91,16 +86,7 @@
     return rows;
   }
   function drawSummary() {
-    const entries = summaryRows().map(([title, value]) => {
-      const wrapper = document.createElement('div');
-      const term = document.createElement('dt');
-      const detail = document.createElement('dd');
-      term.textContent = title.toUpperCase();
-      detail.textContent = value;
-      wrapper.append(term, detail);
-      return wrapper;
-    });
-    byId('booking-details').replaceChildren(...entries);
+    timeSlotBooking.renderRows(byId('booking-details'), summaryRows());
     byId('booking-price').textContent = priceFormat.format(selectedOperations().length * demoOperationPrice);
     inn.parentElement.classList.toggle('inn-short', inn.value.length <= 10);
     byId('booking-error').hidden = true;
@@ -148,20 +134,6 @@
     drawSummary();
   });
 
-  function showReceipt(show) {
-    form.hidden = show;
-    byId('summary-actions').hidden = show;
-    byId('receipt-actions').hidden = !show;
-    byId('receipt').hidden = !show;
-    byId('receipt-crumb').hidden = !show;
-    const crumb = byId('receipt-crumb').previousElementSibling.firstElementChild;
-    if (show) crumb.removeAttribute('aria-current');
-    else crumb.setAttribute('aria-current', 'page');
-    heading.textContent = show ? 'Заявка сформирована' : original.title;
-    lead.textContent = show ? 'Демонстрационная заявка на гарантированное обслуживание. Ниже — выбранные параметры и условия исполнения.' : original.lead;
-    heading.focus({ preventScroll: true });
-    heading.scrollIntoView({ block: 'start', behavior: 'instant' });
-  }
   form.addEventListener('submit', event => {
     event.preventDefault();
     let message = '';
@@ -185,18 +157,40 @@
     }
     const deadline = formatDate(selectedDate - day) + ', ' + clock(selectedTime);
     const price = byId('booking-price').textContent;
-    draftNumber += 1;
-    const reference = 'ДЕМО-' + formatDate(selectedDate).replaceAll('.', '') + '-' + String(draftNumber).padStart(3, '0');
-    receipt = { rows: summaryRows(), price, deadline, reference };
-    byId('receipt-reference').textContent = 'Номер образца: ' + reference;
-    byId('contract-deadline').textContent = 'до ' + deadline;
-    byId('advance').textContent = price;
-    showReceipt(true);
+    const draft = {
+      inn: inn.value, date: selectedDate, minutes: selectedTime,
+      operations: operations.map(row => ({
+        enabled: row.querySelector('.operation-toggle').checked,
+        value: row.querySelector('.booking-code input').value,
+        numberless: Boolean(row.querySelector('.no-number')?.checked)
+      }))
+    };
+    let id;
+    try {
+      id = timeSlotBooking.save({ rows: summaryRows(), price, deadline, draft });
+    } catch {
+      byId('booking-error').textContent = 'Не удалось сохранить заявку. Разрешите хранение данных для этой страницы и попробуйте ещё раз.';
+      byId('booking-error').hidden = false;
+      return;
+    }
+    location.assign('time-slot-confirmation.html?id=' + encodeURIComponent(id));
   });
-  byId('edit-booking').addEventListener('click', () => showReceipt(false));
-  byId('download').addEventListener('click', () => {
-    if (receipt) downloadBookingPdf(receipt);
-  });
+
+  const saved = timeSlotBooking.read(new URLSearchParams(location.search).get('edit'));
+  if (saved) {
+    const draft = saved.draft;
+    inn.value = draft.inn;
+    selectedDate = draft.date > today() ? draft.date : today() + day;
+    selectedTime = available(selectedDate, draft.minutes) && selectedDate === draft.date ? draft.minutes : null;
+    month = firstOfMonth(selectedDate);
+    operations.forEach((row, index) => {
+      const entry = draft.operations[index];
+      row.querySelector('.operation-toggle').checked = entry.enabled;
+      row.querySelector('.booking-code input').value = entry.value;
+      const unnumbered = row.querySelector('.no-number');
+      if (unnumbered) unnumbered.checked = entry.numberless;
+    });
+  }
   operations.forEach(syncOperation);
   drawCalendar();
   drawSlots();
